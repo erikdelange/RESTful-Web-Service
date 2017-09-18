@@ -1,4 +1,4 @@
-#RESTful web service example
+# RESTful web service example
 
 This Python project contains:
 - A minimal RESTful web service to maintain a todo list. Only four functions are implemented: retrieving the content of one or all tasks and adding, editing and deleting tasks.
@@ -11,7 +11,7 @@ The Bottle web page templates are built on top off the bootstrap framework.
 In the project the directory structure for the WEB API and the GUI application server are mixed.
 See below the relevant parts for each of them.
 
-#####WEB API server
+##### WEB API server
 
     db\
         __init__.py
@@ -23,7 +23,7 @@ See below the relevant parts for each of them.
     todo.db
     todo.sql
 
-#####GUI application server
+##### GUI application server
 
     api\
         __init__.py
