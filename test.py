@@ -1,4 +1,8 @@
-""" Various calls to the web service """
+""" Demonstration of the various calls to the todo web service.
+
+    server.py must be started separately (and first).
+
+"""
 import json
 from datetime import datetime
 
