@@ -27,8 +27,8 @@ def connect(database=":memory:", script="todo.sql"):
 
     db.connection = sqlite3.connect(database, detect_types=sqlite3.PARSE_DECLTYPES | sqlite3.PARSE_COLNAMES)
     db.connection.row_factory = sqlite3.Row
-    db.connection.execute("pragma foreign_keys=ON")
-    db.connection.execute("SELECT name FROM sqlite_master WHERE type='table'")
+    db.connection.execute("pragma foreign_keys = ON")
+    db.connection.execute("SELECT name FROM sqlite_master WHERE type = 'table'")
 
     if is_new_database:
         with open(script, "r") as file:

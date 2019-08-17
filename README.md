@@ -5,10 +5,10 @@ Ever wondered how to build a web service and how to actually communicate with it
 - A minimal web app to view and maintain the todo list, using calls to the web service.
 
 The web service and app are built using the *Bottle* web framework.
-All replies from the web service are structured following the *jsend* conventions.
+All replies from the web service are structured following the *jsend* conventions (see: https://github.com/omniti-labs/jsend).
 The Bottle web page templates are built on top off the bootstrap framework.
 
-In the project the directory structure for the WEB API and the GUI application server are mixed.
+Within this project the directory structure for the WEB API and the GUI application server are mixed.
 See below the relevant parts for each of them.
 
 ##### WEB API server
@@ -23,7 +23,7 @@ See below the relevant parts for each of them.
     todo.db
     todo.sql
 
-The actual web service resides in *server.py*. It connects to the *task* table in the SQLite todo.db database via *db\task.py*. SQL file todo.sql contains the statements needed to create and fill the todo database. When you want to take a look at the database I recommend using freeware SQLite database manager SQLiteStudio.
+The actual web service resides in *server.py*. It reads from - and writes to the *task* table in the SQLite todo.db database via *db\task.py*. When the web service is started it first tries to connect to the database. If this cannot be found - either because it really is not there or you've choosen to connect to an in-memory database - SQL file todo.sql will be executed. It contains the statements needed to create and fill the todo database. When you want to take a look at the database I recommend using freeware SQLite database manager SQLiteStudio.
 
 ##### GUI application server
 
@@ -43,7 +43,6 @@ To run the server and the GUI use the Windows command prompt or the powershell:
 > start python client.py
 ```
 The server listens to address 127.0.0.10:8080 and the client to 127.0.0.1:8080.
-If database todo.db does not exist it will automatically be created the first time server.py is run.
+Remember that if database todo.db does not exist it will automatically be created the first time server.py is run.
 
 To view the GUI start your webbrowser and browse to 127.0.0.1:8080.
- 

@@ -17,6 +17,7 @@ import requests
 import jsend
 
 URL = "http://127.0.0.10:8080"
+# URL = "https://kwedelange.pythonanywhere.com"
 
 
 def select(id=None):
