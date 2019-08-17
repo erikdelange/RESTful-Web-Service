@@ -1,5 +1,5 @@
 --
--- File generated with SQLiteStudio v3.1.1 on ma sep 18 11:15:33 2017
+-- File generated with SQLiteStudio v3.2.1 on za aug 17 21:10:26 2019
 --
 -- Text encoding used: System
 --
@@ -147,7 +147,7 @@ CREATE TRIGGER [update modified]
           WHEN NEW.modified = OLD.modified
 BEGIN
     UPDATE task
-       SET modified = CURRENT_TIMESTAMP
+       SET modified = DATETIME('now', 'localtime') 
      WHERE id = OLD.id;
 END;
 
