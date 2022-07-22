@@ -1,5 +1,3 @@
-import db.task
+import db.task as task
 
 from db.sqlite import *
-
-connection = None

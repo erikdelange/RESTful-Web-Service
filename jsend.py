@@ -1,13 +1,13 @@
 """ Build jsend compliant JSON strings.
 
 Follows standards from:
-    https://labs.omniti.com/labs/jsend
+    https://github.com/omniti-labs/jsend
 
 Usage when sending a response (using Bottle):
 
     @route("/something", GET)
     def ...
-        return jsend.success("Some data")
+        return jsend.success(data="Some data")
 
 Usage when receiving a response (using requests):
 
@@ -46,7 +46,7 @@ def error(message=None, code=None, data=None):
 
 
 def json_serialize(obj):
-    """ JSON serializer for objects not serializable by default by json.dumps. """
+    """ JSON serializer for objects not serializable by default by json.dumps """
 
     if isinstance(obj, datetime):
         return obj.isoformat()

@@ -1,5 +1,5 @@
 --
--- File generated with SQLiteStudio v3.2.1 on za aug 17 21:10:26 2019
+-- File generated with SQLiteStudio v3.2.1 on wo aug 21 21:21:54 2019
 --
 -- Text encoding used: System
 --
@@ -62,8 +62,8 @@ INSERT INTO task (
                  )
                  VALUES (
                      1,
-                     'Read',
-                     'Read something to get a good introduction into Python',
+                     'Read a book',
+                     'Read a book to get a good introduction into Python',
                      '2020-01-01',
                      'C',
                      '2017-09-18 09:10:20'
@@ -79,8 +79,8 @@ INSERT INTO task (
                  )
                  VALUES (
                      2,
-                     'Visit',
-                     'Visit the python.org website',
+                     'Visit python.org',
+                     'Visit the python.org website and browse around',
                      '2015-03-27',
                      'C',
                      '2017-09-17 17:58:28'
@@ -96,7 +96,7 @@ INSERT INTO task (
                  )
                  VALUES (
                      3,
-                     'Test',
+                     'Test editors',
                      'Test various editors and check the syntax highlighting',
                      '2015-01-01',
                      'O',
@@ -113,7 +113,7 @@ INSERT INTO task (
                  )
                  VALUES (
                      4,
-                     'Choose',
+                     'Choose GUI-framework',
                      'Choose your favorite GUI-Framework',
                      '2015-01-03',
                      'O',
@@ -130,11 +130,11 @@ INSERT INTO task (
                  )
                  VALUES (
                      5,
-                     'Duck',
-                     'Go up the Amazon on a rubber duck',
-                     '2015-01-01',
+                     'Rubber Duck',
+                     'Go to amazon.com and buy a rubber duck',
+                     '2020-01-01',
                      'O',
-                     '2017-09-17 17:58:58'
+                     '2019-08-21 21:20:24'
                  );
 
 

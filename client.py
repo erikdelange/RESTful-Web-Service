@@ -1,9 +1,14 @@
-""" UI server using the web api. """
+""" UI server to maintain a todo list.
+
+Usage:
+    Start client app via the terminal: > start python client.py
+    Then browse to localhost:8080 to open the UI.
+"""
 from datetime import datetime
 
-from bottle import Bottle, template, request, redirect
+from bottle import Bottle, redirect, request, template
 
-import api
+import api.task
 import jsend
 
 app = Bottle()

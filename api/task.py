@@ -1,6 +1,8 @@
-""" API library for todo list webservice.
+""" API library for calling the to-do list webservice.
 
-Returns a jsend format response as python dictionary
+See server.py for all possible calls.
+
+Returns a JSend compliant response as python dictionary.
 
 Typical usage:
     result = api.task.select(1234)
@@ -15,16 +17,17 @@ from datetime import date
 import requests
 
 import jsend
+import server
 
-URL = "http://127.0.0.10:8080"
+URL = f"http://{server.HOST}:{server.PORT}"
 
 
-def select(id=None):
+def select(task_id=None):
     try:
-        if id is None:
+        if task_id is None:
             result = requests.get(URL + "/task")
         else:
-            result = requests.get(URL + "/task/{:d}".format(id))
+            result = requests.get(URL + f"/task/{task_id:d}")
         return result.json()
     except Exception as e:
         result = jsend.error("select task failed", code=type(e).__name__, data=str(e))
@@ -41,23 +44,23 @@ def insert(summary="", description="", duedate=date.today(), status_id="O"):
         return json.loads(result)
 
 
-def update(id, summary, description, duedate, status_id):
+def update(task_id, summary, description, duedate, status_id):
     try:
-        result = requests.put(URL + "/task/{:d}".format(id), json=dict(id=id, summary=summary, description=description,
-                                                                       duedate=duedate.isoformat(),
-                                                                       status_id=status_id))
+        result = requests.put(URL + f"/task/{task_id:d}",
+                              json=dict(task_id=task_id, summary=summary, description=description,
+                                        duedate=duedate.isoformat(), status_id=status_id))
         return result.json()
     except Exception as e:
         result = jsend.error("update task failed", code=type(e).__name__, data=str(e))
         return json.loads(result)
 
 
-def delete(id=None):
+def delete(task_id=None):
     try:
-        if id is None:
+        if task_id is None:
             result = requests.delete(URL + "/task")
         else:
-            result = requests.delete(URL + "/task/{:d}".format(id))
+            result = requests.delete(URL + f"/task/{task_id:d}")
         return result.json()
     except Exception as e:
         result = jsend.error("delete task failed", code=type(e).__name__, data=str(e))
